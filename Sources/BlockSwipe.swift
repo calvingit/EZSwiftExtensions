@@ -19,7 +19,7 @@ open class BlockSwipe: UISwipeGestureRecognizer {
     }
 
     public convenience init (
-        direction: UISwipeGestureRecognizerDirection,
+        direction: UISwipeGestureRecognizer.Direction,
         fingerCount: Int = 1,
         action: ((UISwipeGestureRecognizer) -> Void)?) {
             self.init()
@@ -36,7 +36,7 @@ open class BlockSwipe: UISwipeGestureRecognizer {
     }
 
     @objc open func didSwipe (_ swipe: UISwipeGestureRecognizer) {
-        swipeAction? (swipe)
+        swipeAction?(swipe)
     }
 }
 

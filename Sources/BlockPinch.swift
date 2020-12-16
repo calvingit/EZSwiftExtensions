@@ -25,7 +25,7 @@ open class BlockPinch: UIPinchGestureRecognizer {
     }
 
     @objc open func didPinch (_ pinch: UIPinchGestureRecognizer) {
-        pinchAction? (pinch)
+        pinchAction?(pinch)
     }
 }
 

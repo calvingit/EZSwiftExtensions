@@ -25,7 +25,7 @@ open class BlockPan: UIPanGestureRecognizer {
     }
 
     @objc open func didPan (_ pan: UIPanGestureRecognizer) {
-        panAction? (pan)
+        panAction?(pan)
     }
 }
 

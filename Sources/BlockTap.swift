@@ -36,7 +36,7 @@ open class BlockTap: UITapGestureRecognizer {
     }
 
     @objc open func didTap (_ tap: UITapGestureRecognizer) {
-        tapAction? (tap)
+        tapAction?(tap)
     }
 }
 

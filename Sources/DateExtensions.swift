@@ -8,7 +8,12 @@
 
 import Foundation
 
-/// EZSE: This Date Formatter Manager help to cache already created formatter in a synchronized Dictionary to use them in future, helps in performace improvement.
+#if os(iOS)
+import UIKit
+#endif
+/// EZSE: This Date Formatter Manager help to cache already created
+/// formatter in a synchronized Dictionary to use them in future, helps in
+/// performace improvement.
 
 class DateFormattersManager {
     public static var dateFormatters: SynchronizedDictionary = SynchronizedDictionary<String, DateFormatter>()

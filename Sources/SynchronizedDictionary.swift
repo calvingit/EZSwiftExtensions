@@ -13,7 +13,7 @@ public class SynchronizedDictionary <Key: Hashable, Value> {
     
     fileprivate let queue = DispatchQueue(label: "SynchronizedDictionary", attributes: .concurrent)
     fileprivate var dict = [Key: Value]()
-    
+
     func getValue(for key: Key) -> Value? {
         var value: Value?
         queue.sync {

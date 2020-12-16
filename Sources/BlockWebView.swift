@@ -28,20 +28,20 @@ open class BlockWebView: UIWebView, UIWebViewDelegate {
     }
 
     open func webViewDidStartLoad(_ webView: UIWebView) {
-        didStartLoad? (webView.request!)
+        didStartLoad?(webView.request!)
     }
 
     open func webViewDidFinishLoad(_ webView: UIWebView) {
-        didFinishLoad? (webView.request!)
+        didFinishLoad?(webView.request!)
     }
 
     open func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        didFailLoad? (webView.request!, error)
+        didFailLoad?(webView.request!, error)
     }
 
-    open func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    open func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
         if let should = shouldStartLoadingRequest {
-            return should (request)
+            return should(request)
         } else {
             return true
         }

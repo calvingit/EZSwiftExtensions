@@ -262,7 +262,7 @@ extension URL {
                     return false
                 }
             } else {
-                let dict = try? (self as NSURL).resourceValues(forKeys: [URLResourceKey.isExcludedFromBackupKey])
+                let dict = try?(self as NSURL).resourceValues(forKeys: [URLResourceKey.isExcludedFromBackupKey])
                 if  let key: AnyObject = dict?[URLResourceKey.isExcludedFromBackupKey] as AnyObject? {
                     return key.boolValue
                 }

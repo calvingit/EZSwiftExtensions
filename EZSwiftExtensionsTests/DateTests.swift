@@ -362,7 +362,11 @@ class DateTests: XCTestCase {
     #if os(iOS) || os(tvOS)
     
     func testISO8601() {
-        XCTAssertEqual(self.date.iso8601, "2015-11-14T16:05:11Z")
+        if #available(iOS 10.0, *) {
+            XCTAssertEqual(self.date.iso8601, "2015-11-14T16:05:11Z")
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     #endif

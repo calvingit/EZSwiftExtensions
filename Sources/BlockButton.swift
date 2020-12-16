@@ -32,7 +32,7 @@ open class BlockButton: UIButton {
     }
 
     public init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, action: BlockButtonAction?) {
-        super.init (frame: CGRect(x: x, y: y, width: w, height: h))
+        super.init(frame: CGRect(x: x, y: y, width: w, height: h))
         self.action = action
         defaultInit()
     }
@@ -60,16 +60,16 @@ open class BlockButton: UIButton {
     }
 
     private func defaultInit() {
-        addTarget(self, action: #selector(BlockButton.didPressed(_:)), for: UIControlEvents.touchUpInside)
-        addTarget(self, action: #selector(BlockButton.highlight), for: [UIControlEvents.touchDown, UIControlEvents.touchDragEnter])
+        addTarget(self, action: #selector(BlockButton.didPressed(_:)), for: UIControl.Event.touchUpInside)
+        addTarget(self, action: #selector(BlockButton.highlight), for: [UIControl.Event.touchDown, UIControl.Event.touchDragEnter])
         addTarget(self, action: #selector(BlockButton.unhighlight), for: [
-            UIControlEvents.touchUpInside,
-            UIControlEvents.touchUpOutside,
-            UIControlEvents.touchCancel,
-            UIControlEvents.touchDragExit
+            UIControl.Event.touchUpInside,
+            UIControl.Event.touchUpOutside,
+            UIControl.Event.touchCancel,
+            UIControl.Event.touchDragExit
         ])
-        setTitleColor(UIColor.black, for: UIControlState.normal)
-        setTitleColor(UIColor.blue, for: UIControlState.selected)
+        setTitleColor(UIColor.black, for: UIControl.State.normal)
+        setTitleColor(UIColor.blue, for: UIControl.State.selected)
     }
 
     open func addAction(_ action: @escaping BlockButtonAction) {
@@ -92,7 +92,7 @@ open class BlockButton: UIButton {
         highlightLayer.frame = layer.bounds
         highlightLayer.backgroundColor = UIColor.black.cgColor
         highlightLayer.opacity = 0.5
-        var maskImage: UIImage? = nil
+        var maskImage: UIImage?
         UIGraphicsBeginImageContextWithOptions(layer.bounds.size, false, 0)
         if let context = UIGraphicsGetCurrentContext() {
             layer.render(in: context)

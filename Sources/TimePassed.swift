@@ -21,7 +21,7 @@ public enum TimePassed {
 
 extension TimePassed: Equatable {
     
-    public static func ==(lhs: TimePassed, rhs: TimePassed) -> Bool {
+    public static func==(lhs: TimePassed, rhs: TimePassed) -> Bool {
         
         switch(lhs, rhs) {
             
